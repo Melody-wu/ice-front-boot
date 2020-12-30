@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+const program = require('commander');
+const Ice = require('../scripts');
+
+program
+    .option('-c, --config <path>', 'set config path. defaults to ./ice.config.js')
+    .option('-e, --env <path>', 'NODE_ENV in build')
+    .parse(process.argv);
+
+Ice.build(program);
